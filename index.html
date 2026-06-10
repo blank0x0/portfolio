@@ -6,18 +6,20 @@
   <title>Muntaha Haque Raad | Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- NAV -->
   <nav class="navbar" id="navbar">
     <div class="nav-logo">
-      <span class="logo-bracket">&lt;</span>dev<span class="logo-bracket">/&gt;</span>
+      <span>&lt;</span>MHR<span>/&gt;</span>
     </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -26,274 +28,346 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ═══════════════ HERO ═══════════════ -->
   <section class="hero" id="home">
-    <div class="hero-bg">
-      <canvas id="particles"></canvas>
+
+    <div class="aurora">
+      <div class="aurora-blob a1" id="aBlob1"></div>
+      <div class="aurora-blob a2" id="aBlob2"></div>
+      <div class="aurora-blob a3" id="aBlob3"></div>
     </div>
+
+    <canvas id="particles"></canvas>
+
+    <!-- Spotlight that follows cursor -->
+    <div class="spotlight" id="spotlight"></div>
+
+    <!-- Floating code words -->
+    <div class="float-words" aria-hidden="true">
+      <span class="fw fw1">const</span>
+      <span class="fw fw2">{ }</span>
+      <span class="fw fw3">//</span>
+      <span class="fw fw4">async</span>
+      <span class="fw fw5">&lt;/&gt;</span>
+      <span class="fw fw6">import</span>
+      <span class="fw fw7">=&gt;</span>
+      <span class="fw fw8">[ ]</span>
+    </div>
+
     <div class="hero-content">
-      <p class="hero-greeting">Hello, World! I'm</p>
-      <h1 class="hero-name">
-        <span class="name-text">Muntaha Haque Raad</span>
+
+      <div class="hero-tag">
+        <span class="tag-dot"></span> Available for work
+      </div>
+
+      <!-- Name split into letters for stagger animation -->
+      <h1 class="hero-name" aria-label="Muntaha Haque Raad">
+        <span class="name-line" id="nameLine1"></span>
+        <span class="name-line name-line-2" id="nameLine2"></span>
       </h1>
-      <div class="hero-role">
-        <span class="role-prefix">I build&nbsp;</span>
-        <span class="typewriter" id="typewriter"></span>
-        <span class="cursor-blink">|</span>
+
+      <div class="hero-divider">
+        <span class="divider-line"></span>
+        <span class="divider-label" id="roleCycle">Full-Stack Developer</span>
+        <span class="divider-line"></span>
       </div>
+
       <p class="hero-bio">
-        A passionate full-stack developer crafting clean, performant, and beautiful digital experiences.
+        I design and build things for the web — fast, clean, and built to last.
+        Pixel-perfect interfaces on the front, rock-solid systems on the back.
       </p>
+
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Let's Talk</a>
+        <a href="#projects" class="btn btn-primary">
+          <span>See My Work</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="mailto:muntahahaque1@gmail.com" class="btn btn-ghost">Get In Touch</a>
       </div>
-      <div class="hero-scroll">
-        <div class="scroll-line"></div>
-        <span>scroll</span>
+
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-n">20+</span><span class="hstat-l">Projects</span></div>
+        <div class="hstat-sep"></div>
+        <div class="hstat"><span class="hstat-n">3+</span><span class="hstat-l">Years Exp.</span></div>
+        <div class="hstat-sep"></div>
+        <div class="hstat"><span class="hstat-n">∞</span><span class="hstat-l">Coffee</span></div>
       </div>
+
     </div>
+
+    <div class="scroll-cue">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll</span>
+    </div>
+
+    <!-- Wave transition into next section -->
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50 L1440,100 L0,100 Z" fill="var(--bg)"/>
+      </svg>
+    </div>
+
   </section>
 
-  <!-- ABOUT -->
+  <!-- Animated section connector -->
+  <div class="section-connector">
+    <div class="connector-line"></div>
+    <div class="connector-dot"></div>
+  </div>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
   <section class="section" id="about">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">01. about</span>
-        <h2>Who I Am</h2>
+      <div class="section-label sr-up">
+        <span class="label-line"></span>
+        <span>About Me</span>
       </div>
-      <div class="about-grid">
-        <div class="about-image reveal">
-          <div class="image-frame">
-            <div class="image-placeholder">
+
+      <div class="about-layout">
+        <div class="about-left sr-left">
+          <div class="about-avatar">
+            <div class="avatar-ring r1"></div>
+            <div class="avatar-ring r2"></div>
+            <div class="avatar-inner">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="35" r="20" fill="#7c3aed"/>
-                <ellipse cx="50" cy="80" rx="30" ry="20" fill="#7c3aed"/>
+                <circle cx="50" cy="36" r="22" fill="url(#ag)"/>
+                <ellipse cx="50" cy="85" rx="32" ry="22" fill="url(#ag)"/>
+                <defs>
+                  <linearGradient id="ag" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#7c3aed"/>
+                    <stop offset="100%" stop-color="#06b6d4"/>
+                  </linearGradient>
+                </defs>
               </svg>
             </div>
-            <div class="image-border"></div>
           </div>
         </div>
-        <div class="about-text reveal">
-          <p>
-            I'm a developer who loves turning complex problems into simple, elegant solutions.
-            With a strong foundation in both front-end and back-end technologies, I enjoy
-            building products that live at the intersection of design and engineering.
+
+        <div class="about-right">
+          <h2 class="about-heading sr-right">
+            Building digital experiences <em>that matter</em>
+          </h2>
+          <p class="about-p sr-up" style="--sd:100ms">
+            Hey — I'm Muntaha. A full-stack developer based in Bangladesh with a deep passion
+            for crafting products that are not only functional but genuinely enjoyable to use.
+            I obsess over the details: the interaction that feels just right, the API that
+            responds in milliseconds, the code a teammate can read six months later.
           </p>
-          <p>
-            When I'm not coding, you'll find me exploring new frameworks, contributing to
-            open source, or leveling up my problem-solving on competitive platforms.
+          <p class="about-p sr-up" style="--sd:200ms">
+            I've shipped everything from solo side-projects to production apps with real users.
+            Whether it's a slick React UI, a Python backend, or a deployed cloud pipeline —
+            I own the full stack. Currently open to opportunities where I can build impactful
+            things with great people.
           </p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num" data-target="20">0</span>+
-              <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num" data-target="3">0</span>+
-              <span class="stat-label">Years Exp.</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num" data-target="10">0</span>+
-              <span class="stat-label">Technologies</span>
+          <div class="tech-stack sr-up" style="--sd:300ms">
+            <span class="ts-label">Stack I reach for →</span>
+            <div class="ts-pills">
+              <span>React</span><span>Next.js</span><span>TypeScript</span>
+              <span>Node.js</span><span>Python</span><span>PostgreSQL</span>
+              <span>Docker</span><span>AWS</span>
             </div>
           </div>
-          <a href="#" class="btn btn-primary" download>Download CV</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section class="section section-dark" id="skills">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">02. skills</span>
-        <h2>What I Work With</h2>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-category reveal">
-          <h3><span class="cat-icon">⚡</span> Frontend</h3>
-          <div class="skill-bars">
-            <div class="skill-bar" data-skill="React / Next.js" data-pct="90"></div>
-            <div class="skill-bar" data-skill="TypeScript" data-pct="85"></div>
-            <div class="skill-bar" data-skill="CSS / Tailwind" data-pct="92"></div>
-            <div class="skill-bar" data-skill="Vue.js" data-pct="75"></div>
-          </div>
-        </div>
-        <div class="skill-category reveal">
-          <h3><span class="cat-icon">🛠</span> Backend</h3>
-          <div class="skill-bars">
-            <div class="skill-bar" data-skill="Node.js / Express" data-pct="88"></div>
-            <div class="skill-bar" data-skill="Python / FastAPI" data-pct="80"></div>
-            <div class="skill-bar" data-skill="PostgreSQL" data-pct="82"></div>
-            <div class="skill-bar" data-skill="MongoDB" data-pct="78"></div>
-          </div>
-        </div>
-        <div class="skill-category reveal">
-          <h3><span class="cat-icon">☁️</span> DevOps &amp; Tools</h3>
-          <div class="skill-bars">
-            <div class="skill-bar" data-skill="Docker / K8s" data-pct="72"></div>
-            <div class="skill-bar" data-skill="AWS / GCP" data-pct="70"></div>
-            <div class="skill-bar" data-skill="Git / CI/CD" data-pct="90"></div>
-            <div class="skill-bar" data-skill="Linux" data-pct="85"></div>
-          </div>
-        </div>
-      </div>
+  <div class="section-connector">
+    <div class="connector-line"></div>
+    <div class="connector-dot"></div>
+  </div>
 
-      <div class="tech-pills reveal">
-        <span class="pill">JavaScript</span>
-        <span class="pill">TypeScript</span>
-        <span class="pill">Python</span>
-        <span class="pill">React</span>
-        <span class="pill">Next.js</span>
-        <span class="pill">Node.js</span>
-        <span class="pill">Docker</span>
-        <span class="pill">PostgreSQL</span>
-        <span class="pill">GraphQL</span>
-        <span class="pill">Redis</span>
-        <span class="pill">AWS</span>
-        <span class="pill">Figma</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section class="section section-alt" id="projects">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">03. projects</span>
-        <h2>Things I've Built</h2>
+      <div class="section-label sr-up">
+        <span class="label-line"></span>
+        <span>Projects</span>
       </div>
+      <p class="section-sub sr-up" style="--sd:100ms">
+        A selection of things I've built. Click any card for more.
+      </p>
+
+      <!--
+      ╔═══════════════════════════════════════════╗
+      ║  HOW TO ADD A PROJECT                     ║
+      ║  1. Copy one <article class="project-card"> block
+      ║  2. Paste it below the last project card  ║
+      ║  3. Edit: pc-title, pc-desc, pc-tags      ║
+      ║  4. Set data-color to any hex color       ║
+      ║  5. Update the href links                 ║
+      ╚═══════════════════════════════════════════╝
+      -->
       <div class="projects-grid">
 
-        <div class="project-card featured reveal">
-          <div class="project-top">
-            <div class="project-folder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        <!-- PROJECT 1 — FitFuel -->
+        <article class="project-card sr-up" style="--sd:0ms" data-color="#10b981">
+          <div class="pc-glow"></div>
+          <div class="pc-top">
+            <div class="pc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2a9 9 0 0 1 9 9c0 4.5-3 8.25-7 9.5V22H10v-1.5C6 19.25 3 15.5 3 11a9 9 0 0 1 9-9z"/><path d="M9 12l2 2 4-4"/></svg>
             </div>
-            <div class="project-links">
-              <a href="#" aria-label="GitHub">
+            <div class="pc-links">
+              <a href="https://github.com/Blank0x0/fitfuel" title="View Code" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               </a>
-              <a href="#" aria-label="Live">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
             </div>
           </div>
-          <h3 class="project-title">Project Alpha</h3>
-          <p class="project-desc">
-            A full-stack SaaS platform with real-time collaboration features, role-based access control,
-            and an analytics dashboard. Built to scale.
-          </p>
-          <div class="project-tech">
-            <span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span>
-          </div>
-        </div>
+          <h3 class="pc-title">FitFuel</h3>
+          <p class="pc-desc">A full-stack nutrition &amp; fitness platform — web app + mobile app. Track macros, browse AI-generated meals via Llama 3, find local grocery deals on an interactive map, and manage your food budget across Canadian supermarkets.</p>
+          <div class="pc-tags"><span>Next.js</span><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Groq AI</span></div>
+        </article>
 
-        <div class="project-card reveal">
-          <div class="project-top">
-            <div class="project-folder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        <!-- PROJECT 2 -->
+        <article class="project-card sr-up" style="--sd:80ms" data-color="#06b6d4">
+          <div class="pc-glow"></div>
+          <div class="pc-top">
+            <div class="pc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-            <div class="project-links">
-              <a href="#" aria-label="GitHub">
+            <div class="pc-links">
+              <a href="#" title="View Code" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               </a>
-              <a href="#" aria-label="Live">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <a href="#" title="Live Demo" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
           </div>
-          <h3 class="project-title">CLI Dev Tool</h3>
-          <p class="project-desc">
-            A powerful command-line interface tool that automates common development workflows,
-            scaffolding, and deployment pipelines.
-          </p>
-          <div class="project-tech">
-            <span>Node.js</span><span>TypeScript</span><span>Shell</span>
-          </div>
-        </div>
+          <h3 class="pc-title">Project Name</h3>
+          <p class="pc-desc">What the project does, the problem it solves, and who it's for. Keep it to 2–3 sentences.</p>
+          <div class="pc-tags"><span>TypeScript</span><span>Python</span><span>Docker</span></div>
+        </article>
 
-        <div class="project-card reveal">
-          <div class="project-top">
-            <div class="project-folder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        <!-- PROJECT 3 -->
+        <article class="project-card sr-up" style="--sd:160ms" data-color="#f59e0b">
+          <div class="pc-glow"></div>
+          <div class="pc-top">
+            <div class="pc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
-            <div class="project-links">
-              <a href="#" aria-label="GitHub">
+            <div class="pc-links">
+              <a href="#" title="View Code" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               </a>
-              <a href="#" aria-label="Live">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <a href="#" title="Live Demo" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
           </div>
-          <h3 class="project-title">AI Dashboard</h3>
-          <p class="project-desc">
-            An interactive analytics dashboard powered by machine learning, featuring
-            predictive charts and real-time data visualizations.
-          </p>
-          <div class="project-tech">
-            <span>Python</span><span>FastAPI</span><span>React</span><span>D3.js</span>
+          <h3 class="pc-title">Project Name</h3>
+          <p class="pc-desc">What the project does, the problem it solves, and who it's for. Keep it to 2–3 sentences.</p>
+          <div class="pc-tags"><span>Next.js</span><span>Tailwind</span><span>Supabase</span></div>
+        </article>
+
+        <!-- PROJECT 4 -->
+        <article class="project-card sr-up" style="--sd:0ms" data-color="#10b981">
+          <div class="pc-glow"></div>
+          <div class="pc-top">
+            <div class="pc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div class="pc-links">
+              <a href="#" title="View Code" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="#" title="Live Demo" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
           </div>
-        </div>
+          <h3 class="pc-title">Project Name</h3>
+          <p class="pc-desc">What the project does, the problem it solves, and who it's for. Keep it to 2–3 sentences.</p>
+          <div class="pc-tags"><span>Vue.js</span><span>FastAPI</span><span>Redis</span></div>
+        </article>
+
+        <!-- PROJECT 5 -->
+        <article class="project-card sr-up" style="--sd:80ms" data-color="#ec4899">
+          <div class="pc-glow"></div>
+          <div class="pc-top">
+            <div class="pc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div class="pc-links">
+              <a href="#" title="View Code" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="#" title="Live Demo" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Project Name</h3>
+          <p class="pc-desc">What the project does, the problem it solves, and who it's for. Keep it to 2–3 sentences.</p>
+          <div class="pc-tags"><span>React Native</span><span>Expo</span><span>Firebase</span></div>
+        </article>
+
+        <!-- PROJECT 6 -->
+        <article class="project-card sr-up" style="--sd:160ms" data-color="#7c3aed">
+          <div class="pc-glow"></div>
+          <div class="pc-top">
+            <div class="pc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="pc-links">
+              <a href="#" title="View Code" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="#" title="Live Demo" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Project Name</h3>
+          <p class="pc-desc">What the project does, the problem it solves, and who it's for. Keep it to 2–3 sentences.</p>
+          <div class="pc-tags"><span>GraphQL</span><span>MongoDB</span><span>AWS</span></div>
+        </article>
+
+        <!-- ══ ADD MORE PROJECTS HERE ══
+             Copy any project-card block above, paste below, edit content.
+        ════════════════════════════════ -->
 
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section section-dark" id="contact">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">04. contact</span>
-        <h2>Get In Touch</h2>
-      </div>
-      <div class="contact-wrapper reveal">
-        <div class="contact-info">
-          <p>Whether you have a project in mind, an opportunity to share, or just want to connect — my inbox is open.</p>
-          <div class="contact-links">
-            <a href="mailto:muntahahaque1@gmail.com" class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              muntahahaque1@gmail.com
-            </a>
-            <a href="https://github.com/yourusername" class="contact-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              github.com/yourusername
-            </a>
-            <a href="https://linkedin.com/in/yourusername" class="contact-item">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              linkedin.com/in/yourusername
-            </a>
-          </div>
-        </div>
-        <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <input type="text" id="name" placeholder="Your Name" required />
-            <label for="name">Your Name</label>
-          </div>
-          <div class="form-group">
-            <input type="email" id="email" placeholder="Your Email" required />
-            <label for="email">Your Email</label>
-          </div>
-          <div class="form-group">
-            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-            <label for="message">Your Message</label>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">
-            <span>Send Message</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-        </form>
+  <div class="section-connector">
+    <div class="connector-line"></div>
+    <div class="connector-dot"></div>
+  </div>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section class="section" id="contact">
+    <div class="container contact-container">
+      <div class="contact-glow"></div>
+      <p class="contact-eyebrow sr-up">What's next?</p>
+      <h2 class="contact-heading sr-up" style="--sd:100ms">Let's build something <em>together</em></h2>
+      <p class="contact-sub sr-up" style="--sd:200ms">
+        Whether you have a project, a question, or just want to say hi —<br>
+        I'll get back to you within a day.
+      </p>
+      <a href="mailto:muntahahaque1@gmail.com" class="btn btn-primary btn-lg sr-up" style="--sd:300ms">
+        <span>Say Hello</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="contact-socials sr-up" style="--sd:400ms">
+        <a href="https://github.com/Blank0x0" target="_blank" rel="noopener" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/muntahahaqueraad" target="_blank" rel="noopener" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:muntahahaque1@gmail.com" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <p>Designed &amp; Built by <span class="accent">Muntaha Haque Raad</span></p>
-    <p class="footer-sub">Made with HTML · CSS · JavaScript</p>
+    <span class="footer-logo"><span>&lt;</span>MHR<span>/&gt;</span></span>
+    <p>Designed &amp; Built by Muntaha Haque Raad</p>
+    <p class="footer-copy">© 2025 · montycarlo.is-a.dev</p>
   </footer>
 
   <script src="main.js"></script>
